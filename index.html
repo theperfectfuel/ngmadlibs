@@ -1,0 +1,82 @@
+<!doctype html>
+<html class="no-js" lang="" ng-app="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+
+        <div id="main_wrap">
+            <div id="header_row" class="border_one">
+                <div id="header_logo" class="border_one">
+                </div>
+                <div id="header_content" class="border_one">
+                    <div class="centered"><img src="img/ng-mad-libs-logo.png"></div>
+                    <div id="header_text" class="centered"><h1>Automate This!</h1></div>
+                </div>
+            </div>
+
+            <div id="word_field" class="border_one">
+                <h2>Provide the following words:</h2>
+                <ul>
+                    <li id="words_left">
+                        <p><input type="text" placeholder="Female name" ng-model="female_name"></p>
+                        <p><input type="text" placeholder="Job title" ng-model="job_title"></p>
+                        <p><input type="text" placeholder="Tedious task" ng-model="tedious_task"></p>
+                    </li>
+                    <li id="words_middle">
+                        <p><input type="text" placeholder="Dirty task" ng-model="dirty_task"></p>
+                        <p><input type="text" placeholder="Celebrity" ng-model="celebrity"></p>
+                        <p><input type="text" placeholder="Useless skill" ng-model="useless_skill"></p>
+                    </li>
+                    <li id="words_right">
+                        <p><input type="text" placeholder="Obnoxious celebrity" ng-model="obnoxiuous_celebrity"></p>
+                        <p><input type="text" placeholder="Huge number" ng-model="huge_number"></p>
+                        <p><input type="text" placeholder="Adjective" ng-model="adjective"></p>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="text_field" class="border_one">
+                {{female_name}} was a {{job_title}} who loved technology. Although she loved parts of her job, she absolutely hated  {{tedious_task}} and {{dirty_task}}. So, {{female_name}} met with her life mentor {{celebrity}} who told her to learn how to {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so she studied programming instead. 
+ 
+                What a great decision! With her new skills, {{female_name}} built a(n) {{adjective}} robot named {{obnoxiuous_celebrity}} that not only loved {{dirty_task}} but did it {{huge_number}} faster. 
+            </div>
+
+
+        </div>
+
+
+        <!-- script tags here -->
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+    </body>
+</html>
