@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="" ng-app="">
+<html class="no-js" lang="" ng-app="myApp">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -14,8 +14,9 @@
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="js/myApp.js"></script>
     </head>
-    <body>
+    <body ng-controller="myCtrl">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -33,10 +34,10 @@
             </div>
 
             <div id="word_field" class="border_one">
-                <h2>Provide the following words:</h2>
+                <h2>{{greeting}} Provide the following words:</h2>
                 <ul>
                     <li id="words_left">
-                        <p><input type="text" placeholder="Female name" ng-model="female_name"></p>
+                        <p><input type="text" placeholder="Name" ng-model="name"></p>
                         <p><input type="text" placeholder="Job title" ng-model="job_title"></p>
                         <p><input type="text" placeholder="Tedious task" ng-model="tedious_task"></p>
                     </li>
@@ -51,12 +52,38 @@
                         <p><input type="text" placeholder="Adjective" ng-model="adjective"></p>
                     </li>
                 </ul>
+                <h3>Please choose a gender: </h3>
+                    <a href="#" ng-click="gender='male'">Male</a>
+                    <a href="#" ng-click="gender='female'">Female</a>
             </div>
 
             <div id="text_field" class="border_one">
-                {{female_name}} was a {{job_title}} who loved technology. Although she loved parts of her job, she absolutely hated  {{tedious_task}} and {{dirty_task}}. So, {{female_name}} met with her life mentor {{celebrity}} who told her to learn how to {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so she studied programming instead. 
+
+                <div ng-switch="gender">
+                    <div ng-switch-when="female">
+                        {{name}} was a {{job_title}} who loved technology. 
+        Although she loved parts of her job, she absolutely hated  {{tedious_task}} and {{dirty_task}}. 
+        So, {{name}} met with her life mentor {{celebrity}} who told her to learn how to 
+        {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so she 
+        studied programming instead. 
  
-                What a great decision! With her new skills, {{female_name}} built a(n) {{adjective}} robot named {{obnoxiuous_celebrity}} that not only loved {{dirty_task}} but did it {{huge_number}} faster. 
+        What a great decision! With her new skills, {{name}} built a(n) {{adjective}} robot named {{obnoxiuous_celebrity}} that not only loved {{dirty_task}} but did it {{huge_number}} faster.
+                    </div>
+
+
+                    <div ng-switch-when="male">
+                        {{name}} was a {{job_title}} who loved technology. 
+        Although he loved parts of his job, he absolutely hated  {{tedious_task}} and {{dirty_task}}. 
+        So, {{name}} met with his life mentor {{celebrity}} who told him to learn how to 
+        {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so he 
+        studied programming instead. 
+ 
+        What a great decision! With his new skills, {{name}} built a(n) {{adjective}} robot named {{obnoxiuous_celebrity}} that not only loved {{dirty_task}} but did it {{huge_number}} faster.
+                    </div>
+
+
+
+
             </div>
 
 
