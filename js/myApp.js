@@ -1,5 +1,5 @@
 angular
-	.module('myApp', ['ngMessages'])
+	.module('myApp', ["ngMessages", "ngAnimate"])
 	.controller('myCtrl', function($scope) {
 
 		$scope.genderWords = function(userGender) {

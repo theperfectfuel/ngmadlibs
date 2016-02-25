@@ -210,6 +210,15 @@ h1 {
   text-decoration: none;
 }
 
+.fade-in-out {
+  transition: .5s linear all;
+  opacity: 1;
+}
+
+.fade-in-out.ng-hide {
+  opacity: 0;
+}
+
 
 /* ==========================================================================
    Helper classes

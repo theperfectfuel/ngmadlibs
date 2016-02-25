@@ -15,6 +15,7 @@
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.4.5/angular-animate.min.js"></script>
     <script src="js/myApp.js"></script>
   </head>
 
@@ -35,7 +36,7 @@
       </div> <!-- close header_row -->
 
 
-      <div ng-show="gender == ''">
+      <div ng-show="gender == ''" class="fade-in-out">
         <div id="word_field" class="border_one">
 
           <h2>Please provide the following words:</h2>
@@ -104,9 +105,10 @@
             </div>
             <div id="gender_block">
               <h3>Please choose a gender: </h3>
-              <input type="radio" name="genderCheck" value="male" ng-model="genderCheck" ng-click="genderWords('male')" required>Male</input>
-              <input type="radio" name="genderCheck" value="female" ng-model="genderCheck" ng-click="genderWords('female')" required>Female</input>
-              <div class="error_msg" ng-show="storyForm.genderCheck.$error.required && submitted">Please select a gender</div>
+              <input type="radio" name="genderCheck" value="male" ng-model="genderCheck" ng-change="genderWords('male')" required>Male</input>
+              <input type="radio" name="genderCheck" value="female" ng-model="genderCheck" ng-change="genderWords('female')" required>Female</input>
+              <!-- <div class="error_msg" ng-show="storyForm.genderCheck.$error.required">Please select a gender</div> -->
+              <div class="error_msg" ng-show="storyForm.genderCheck.$pristine && submitted">Please select a gender</div>
             </div>
 
             <button class="btn" type="submit">Submit</button>
@@ -115,7 +117,7 @@
       </div> <!-- close ng-if -->
 
 
-      <div ng-show="gender !== ''">
+      <div ng-show="gender !== ''"  class="fade-in-out">
         <div id="text_field" class="border_one">
           <div class="padding">
             <p>{{name}} was a {{job_title}} who loved technology. Although {{heShe}} loved parts of {{hisHer}} job, {{heShe}} absolutely hated  {{tedious_task}} and {{dirty_task}}. So, {{name}} met with {{hisHer}} life mentor {{celebrity}} who told {{himHer}} to learn how to {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so {{heShe}} studied programming instead.</p>
